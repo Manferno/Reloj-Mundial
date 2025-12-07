@@ -70,14 +70,15 @@ function populateTimeZones() {
     zoneSelect2.appendChild(fragment);
 }
 
-function startClock() {
-    function animate() {
-        if (isLive) {
-            currentBaseTime = new Date();
-            updateDisplay(currentBaseTime);
-            requestAnimationFrame(animate);
-        }
+function animate() {
+    if (isLive) {
+        currentBaseTime = new Date();
+        updateDisplay(currentBaseTime);
+        requestAnimationFrame(animate);
     }
+}
+
+function startClock() {
     animate();
 }
 
